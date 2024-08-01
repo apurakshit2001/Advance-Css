@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+
+@font-face {
+    font-family: 'Protest Demo';
+    src: url('./Protest\ Demo.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Kalnia', serif;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    background-image: url(./bkg2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.scroll-watcher-top,
+.scroll-watcher-bottom {
+    width: 100%;
+    height: 5px;
+    scale: 0 1;
+}
+
+.scroll-watcher-top { top: 0; }
+.scroll-watcher-bottom { bottom: 0; }
+.scroll-watcher-left { left: 0; }
+.scroll-watcher-right { right: 0; }
+
+.scroll-watcher-left,
+.scroll-watcher-right {
+    height: 100vh;
+    width: 5px;
+    scale: 1 0;
+}
+
+.scroll-watcher-top,
+.scroll-watcher-bottom,
+.scroll-watcher-left,
+.scroll-watcher-right {
+    position: fixed;
+    z-index: 1000;
+    background-color: #E0FFFF;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to { scale: 1 1; }    
+}
+
+.mainHeading {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid;
+    animation: typing 5s steps(25) forwards, blink 1s step-end infinite;
+    box-shadow: 0 2px rgb(255, 255, 255);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 100px;
+    padding: 20px;
+    filter: drop-shadow(3px 3px 8px rgba(255, 255, 255, 0.4));
+    -webkit-box-reflect: below 0px linear-gradient(
+        transparent,
+        rgba(163, 163, 163, 0.027)
+    );
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 45%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+section:nth-of-type(2){
+    animation: fade-in linear;
+    animation-timeline: view();
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+     border-radius: 15px;
+}
+
+@keyframes fade-in {
+    to { scale: 0.8; opacity: 1;}
+    from { scale: 1; opacity: 1.5; }
+}
+
+section:nth-of-type(1) {
+    font-family: 'Protest Demo', 'Protest Revolution', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section:nth-of-type(1) h1 {
+    text-align: center;
+    font-size: 5rem;
+    z-index: 100;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.spin-box {
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-color: #f0f0f0;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.392);
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.spin-box svg {
+    width: 90%;
+    height: 90%;
+    color: #000;
+    border-radius: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+}
+
+section span {
+    padding: 0 20%;
+    text-align: justify;
+}
+
+@keyframes spin {
+    to {
+        transform: rotateY(5turn);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spin-box {
+        animation: spin 5s ease infinite;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(15px) !important;
+    transform: translateX(-100%) !important;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0) !important;
+    transform: translateX(0) !important;
+}

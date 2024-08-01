@@ -1,0 +1,130 @@
+.item {
+    background-position: center;
+    background-size: cover;
+    width: 115px;
+    height: 300px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 0 10px white;
+}
+
+.item:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.list {
+    display: flex;
+    gap: 5px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.item-1 {
+    background-image: url(https://i.pinimg.com/564x/ee/20/ce/ee20ce783a3c0ec956e6575b5e82da50.jpg);
+    /* transition-delay: 10ms; */
+}
+
+.item-2 {
+    background-image: url(https://i.pinimg.com/736x/2d/89/66/2d8966c1e972bb5724100bb21dd890a8.jpg);
+    /* transition-delay: 20ms; */
+}
+
+.item-3 {
+    background-image: url(https://i.pinimg.com/564x/71/95/0c/71950c34ad76084d84b6dde930047689.jpg);
+    /* transition-delay: 40ms; */
+}
+
+.item-4 {
+    background-image: url(https://i.pinimg.com/736x/98/91/4c/98914cb697f6de0990f26d2020815351.jpg);
+    /* transition-delay: 80ms; */
+}
+
+.item-5 {
+    background-image: url(https://i.pinimg.com/736x/2e/07/96/2e0796f1bba473b61f5310ea8e0645e3.jpg);
+    /* transition-delay: 160ms; */
+}
+
+.item-6 {
+    background-image: url(https://i.pinimg.com/736x/45/e0/19/45e0197c5b8a0611a1b0af8aac7a6a12.jpg);
+    /* transition-delay: 320ms; */
+}
+
+.item-6 {
+    background-image: url(https://i.pinimg.com/736x/45/e0/19/45e0197c5b8a0611a1b0af8aac7a6a12.jpg);
+    /* transition-delay: 640ms; */
+}
+
+.item-7 {
+    background-image: url(https://i.pinimg.com/736x/cb/35/4f/cb354fa4f6151c10ab54e8338cb746a0.jpg);
+    /* transition-delay: 1280ms; */
+}
+
+.item-8 {
+    background-image: url(https://i.pinimg.com/564x/1b/9d/55/1b9d557878cb5315ab72365ed8ed9f11.jpg);
+    /* transition-delay: 2.4s; */
+}
+
+.item-9 {
+    background-image: url(https://i.pinimg.com/564x/c4/c0/aa/c4c0aa6d3b728d9aa6ab8163b694172b.jpg);
+    /* transition-delay: 4.8s; */
+}
+
+.item-10 {
+    background-image: url(https://i.pinimg.com/564x/67/3e/42/673e42811328bc8a7409f16910b21a0d.jpg);
+    /* transition-delay: 9.6s; */
+}
+
+.item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.list .item {
+    transition: 0.5s ease-in-out;
+    filter: brightness(0);
+  }
+  
+  .list .item:hover{
+    filter: brightness(1);
+    transform: translateZ(200px);
+  }
+  
+  .list .item:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+  }
+  
+  .list .item:hover + * + * {
+      filter: brightness(0.4);
+      transform: translateZ(70px) rotateY(20deg);
+  }
+  .list .item:hover + * + * + * {
+      filter: brightness(0.2);
+      transform: translateZ(30px) rotateY(10deg);
+  }
+  .list .item:hover + * + * + * + * {
+      filter: brightness(0.1);
+      transform: translateZ(15px) rotateY(5deg);
+  }
+  
+  .list .item:has(+ *:hover) {
+      filter: brightness(0.6);
+      transform: translateZ(150px) rotateY(-40deg);
+  }
+  .list .item:has(+ * + *:hover) {
+      filter: brightness(0.6);
+      transform: translateZ(70px) rotateY(-20deg);
+  }
+  .list .item:has(+ * + * + *:hover) {
+      filter: brightness(0.2);
+      transform: translateZ(30px) rotateY(-10deg);
+  }
+  .list .item:has(+ * + * + * + *:hover) {
+      filter: brightness(0.1);
+      transform: translateZ(15px) rotateY(-5deg);
+  }

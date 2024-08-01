@@ -36,11 +36,11 @@ section:nth-of-type(2) span::after {
     content: "";
     position: absolute;
     background: url(./pen.png) no-repeat center center;
-    background-size: contain; 
-    height: 700px; 
-    width: 700px; 
-    right: -550px; 
-    bottom: -10px; 
+    background-size: contain;
+    height: 700px;
+    width: 700px;
+    right: -550px;
+    bottom: -10px;
     z-index: 5;
 }
 
@@ -79,6 +79,7 @@ section:nth-of-type(1)::after {
     right: 0;
     top: 0;
 }
+
 section:nth-of-type(11)::before {
     position: absolute;
     content: '';
@@ -89,6 +90,7 @@ section:nth-of-type(11)::before {
     right: 300px;
     top: 300px;
 }
+
 section:nth-of-type(1)::before {
     position: absolute;
     content: '';
@@ -99,17 +101,20 @@ section:nth-of-type(1)::before {
     left: 0;
     bottom: 0;
 }
-section:nth-of-type(1)::after{
+
+section:nth-of-type(1)::after {
     background-color: bisque;
 }
-section:nth-of-type(10){
+
+section:nth-of-type(10) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-section:nth-of-type(10) span{
+
+section:nth-of-type(10) span {
     z-index: 1;
     color: rgb(255, 255, 255);
     width: 100%;
@@ -118,13 +123,18 @@ section:nth-of-type(10) span{
     bottom: 27%;
 
 }
-section:nth-of-type(10) img{
+
+section:nth-of-type(10) img {
     width: 100%;
     z-index: 0;
     filter: drop-shadow(1px 1px 20px white);
 }
+
 section:nth-of-type(10) {
-    -webkit-box-reflect: below
+    -webkit-box-reflect: below -250px linear-gradient(
+        transparent,
+        rgba(163, 163, 163, 0.103)
+    );
 }
 
 section:nth-of-type(11) h1::after {
@@ -137,5 +147,81 @@ section:nth-of-type(11) h1::after {
     border: 1px solid rgba(255, 255, 255, 0.301);
     right: 40%;
     bottom: 25%;
-    filter: blur(3px) drop-shadow(1px 1px 20px white); 
+    filter: blur(3px) drop-shadow(1px 1px 20px white);
+}
+
+.BlowingInTheWind,
+.Imagine,
+.SoundOfSilence,
+.knockin,
+.BohemianRhapsody {
+    position: relative;
+    z-index: 1;
+}
+
+.BlowingInTheWind::before {
+    right: 30px;
+    bottom: -180px;
+    background-image: url(./guitar.png);
+}
+
+.Imagine::before {
+    left: 30px;
+    bottom: -100px;
+    background-image: url(./guitar.png);
+}
+
+.SoundOfSilence::before{
+    right: 20px;
+    bottom: -120px;
+    background-image: url(./steelGUitar.png);
+    filter: drop-shadow(1px 1px 20px rgb(255, 255, 255)) grayscale(1);
+}
+
+.knockin::before{
+    left: 10px;
+    bottom: -70px;
+    background-image: url(./ElectricGuitar.png);
+}
+
+.BohemianRhapsody::before{
+    right: 20px;
+    background-image: url(./piano.png);
+    width: 400px !important;
+    filter: drop-shadow(0 5px white);
+    margin: 0;
+    padding: 0;
+    border-radius: 100%;
+}
+
+.SoundOfSilence:hover::before,
+.knockin:hover::before,
+.BohemianRhapsody:hover::before{
+    filter: drop-shadow(1px 1px 20px rgb(146, 146, 146)) grayscale(0);
+    transform: scale(1.05);
+}
+
+
+.BlowingInTheWind::before,
+.Imagine::before,
+.SoundOfSilence::before,
+.knockin::before,
+.BohemianRhapsody::before {
+    content: '';
+    position: absolute;
+    object-fit: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    height: 100%;
+    width: 500px;
+    z-index: -1;
+    filter: drop-shadow(1px 1px 20px rgb(255, 255, 255)) grayscale(1);
+    transition: filter 0.8s ease-in-out, transform 1s ease-in-out, drop-shadow 1s ease-in-out;
+}
+
+.BlowingInTheWind:hover::before,
+.Imagine:hover::before {
+    filter: drop-shadow(1px 1px 20px gold) grayscale(0) opacity(0.7);
+    transform: scale(1.05);
 }

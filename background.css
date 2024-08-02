@@ -185,7 +185,7 @@ section:nth-of-type(11) h1::after {
 }
 
 .BohemianRhapsody::before{
-    right: 5px;
+    right: -5px;
     background-image: url(./piano.png);
     width: 400px !important;
     filter: drop-shadow(0 5px white);

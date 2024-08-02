@@ -172,7 +172,7 @@ section:nth-of-type(11) h1::after {
 }
 
 .SoundOfSilence::before{
-    right: 20px;
+    right: 5px;
     bottom: -120px;
     background-image: url(./steelGUitar.png);
     filter: drop-shadow(1px 1px 20px rgb(255, 255, 255)) grayscale(1);
@@ -185,7 +185,7 @@ section:nth-of-type(11) h1::after {
 }
 
 .BohemianRhapsody::before{
-    right: -15px;
+    right: -5px;
     background-image: url(./piano.png);
     width: 400px !important;
     filter: drop-shadow(0 5px white);
